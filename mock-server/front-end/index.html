@@ -36,3 +36,43 @@
     </div>
   </body>
 </html>
+
+<script>
+    function addProduct(){
+
+        const data = {
+            id:document.getElementById('id').value,
+            name:document.getElementById('name').value,
+            price:document.getElementById('price').value
+        };
+
+        let response = await fetch('http://127.0.0.1:7000/api/products',{
+            method:"POST",
+            body:JSON.stringify(data),
+            headers:{
+                "Content-Type": "application/json"
+            },
+        });
+
+        let d = await response.json();
+
+        console.log("d:",d)
+
+    }
+
+    async function deleteProduct(){
+        const  id = document.getElementById("delete_id").value;
+
+        let response = await fetch('http://127.0.0.1:7000/api/products',{
+            method:"DELETE",
+            body:JSON.stringify(data),
+            headers:{
+                "Content-Type": "application/json"
+            },
+        });
+
+        let d = await response.json();
+
+        console.log("d:",d)
+    }
+</script>

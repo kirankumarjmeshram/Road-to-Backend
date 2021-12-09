@@ -1,6 +1,6 @@
 //setting up a backend
 
-const port = 6000
+const port = 7000
 
 const path = require('path')
 
